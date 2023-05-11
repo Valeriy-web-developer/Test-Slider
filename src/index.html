@@ -1,34 +1,24 @@
 <html>
 	<head>
-		<title>Создание вкладок на JavaScript</title>
+		<title>Slider_JavaScript</title>
 		<link rel="stylesheet" href="css/style.min.css">
 	</head>
 	<body>
-		<div class="container">
-			<ul class="container--tabs">
-				<li class="tab tab--active">London</li>
-				<li class="tab">New York</li>
-				<li class="tab">Singapore</li>
-			</ul>
-
-			<div class="container__content">
-				<div class="content content--active">
-					<h2>London</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur doloribus necessitatibus possimus.</p>
-					<p><img src="images/london.jpg" width="396" /></p>
+		<section class="promo">
+			<div class="container">
+				<div class="slider">
+					<div class="slider_line">
+						<div class="item"><img src="images/slide1.jpeg" alt="slide"></div>
+			
+						<div class="item"><img src="images/slide2.jpeg" alt="slide"></div>
+			
+						<div class="item"><img src="images/slide3.jpeg" alt="slide"></div>
+					</div>
 				</div>
-				<div class="content">
-					<h2>NYC</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur doloribus necessitatibus possimus.</p>
-					<p><img src="images/nyc.jpg" width="396" /></p>
-				</div>
-				<div class="content">
-					<h2>Singapore</h2>
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam esse voluptas minus autem, veniam dolor, debitis consequuntur dignissimos libero quibusdam consequatur. Enim, pariatur deserunt. Officiis!</p>
-					<p><img src="images/sg.jpg" width="396" /></p>
-				</div>
+				<a class="prev" onclick="previousSlide()"><</a>
+				<a class="next" onclick="nextSlide()">></a> 
 			</div>
-		</div>
+		</section>
 
 		<script src="js/script.js"></script>
 	</body>

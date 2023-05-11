@@ -1,23 +1,27 @@
-const tabs = document.querySelectorAll('.tab');
-const contents = document.querySelectorAll('.content');
+function slider(){
+	let offset = 0; 
+	const sliderLine = document.querySelector('.slider_line');
+	const sliderContainerWidth = document.querySelector('.slider').offsetWidth;
 
-for (let i = 0; i < tabs.length; i++) {
-	tabs[i].addEventListener( 'click', (event) => {
-		//удаляем класс
-		let tabsCurrent = event.target.parentElement.children;
-		for(let t = 0; t < tabsCurrent.length; t++) {
-			tabsCurrent[t].classList.remove('tab--active');
-		}
-		//добавляем класс текущий
-		event.target.classList.add('tab--active');
+const maxWidth = sliderContainerWidth * 2;
 
-		//удаляем класс
-		let contentsCurrent = event.target.parentElement.nextElementSibling.children;
-		
-		for(let c = 0; c < contentsCurrent.length; c++) {
-			contentsCurrent[c].classList.remove('content--active');
-		}
-		//добавляем класс текущий
-		contents[i].classList.add('content--active');
-	});
+document.querySelector('.next').addEventListener('click', function(){ 
+ offset = offset + sliderContainerWidth;
+
+ if (offset > maxWidth) {
+   offset = 0;
+  }
+  sliderLine.style.left = -offset + 'px';
+})
+
+document.querySelector('.prev').addEventListener('click', function(){
+
+ offset = offset - sliderContainerWidth;
+
+ if (offset < 0) {
+     offset = maxWidth;
+  }
+  sliderLine.style.left = -offset + 'px';
+})
 }
+slider();
